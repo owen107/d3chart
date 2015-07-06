@@ -21,7 +21,7 @@ app.controller('mainCtrl', ['$scope', function($scope) {
 	    },{
 	       name: "Access Group 4",
 	       low: 240,
-	       med: 350,
+	       med: 330,
 	       high: 220
 	    },{
 	       name: "Access Group 5",
@@ -51,6 +51,7 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
     
     return {
     	restrict: 'E',
+    	replace: true,
     	scope: {
     		data: '='
     	},
@@ -58,13 +59,13 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
 
     		d3Service.d3().then(function(d3) {
 	          
-	          var margin = {top: 25, right: 5, bottom: 15, left: 5},
+	          var margin = {top: 55, right: 25, bottom: 15, left: 125},
 		          width = 800 - margin.left - margin.right,
-			      height = 600 - margin.top - margin.bottom,
+			      height = 550 - margin.top - margin.bottom,
 			      headers = ['Low Activity', 'Med Activity', 'High Activity'];
 
 			  var yScale = d3.scale.ordinal()
-			      .rangeRoundBands([0, height], .5);
+			      .rangeRoundBands([0, height], .66, 0.2);
   
 			  var xScale = d3.scale.linear()
 			      .rangeRound([0, width]);
@@ -75,18 +76,22 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
   
 			  var xAxis = d3.svg.axis()
 			      .scale(xScale)
+			      .tickSize(-height)
+                  .tickPadding(8)
 			      .orient("top");
   
 			  var yAxis = d3.svg.axis()
 			      .scale(yScale)
+			      .outerTickSize(0)
+			      .tickPadding(5)
 			      .orient("left");
               
               var svg = d3.select(elem[0]).append('svg')
                   .attr('width', width + margin.left + margin.right)
                   .attr('height', height + margin.top + margin.bottom)
                   .attr('id', 'stacked-bar')
-                .append('g')
-                  // .attr('transform', 'translate(' + margin.left + margin.top + ')');
+                  .append('g')
+                  .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 			      
 		      var layers = d3.layout.stack()(['low', 'med', 'high'].map(function(level) {
 		      	   return scope.data.map(function(d) {
@@ -116,11 +121,9 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
 			      .style("fill", function(d, i) { 
 			      	  return colors(i); 
 			      });
-			      // .style("stroke", function(d, i) { return d3.rgb(z(i)).darker(); });
 
 			  var rects = groups.selectAll("rect")
 		          .data(function(d) { 
-		          	// console.log(d);
 		          	return d; 
 		          })
 		          .enter().append("rect")
@@ -138,8 +141,69 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
 		          .on("click", function(d) {
 		               console.log(d.y);
 		          });
-	              
+	          
+	          var hAxis = svg.append('g')
+	               .attr('class', 'x-axis')
+	               .attr('transform', 'translate(0, 0)')
+	               .call(xAxis);
 
+	          var vAxis = svg.append('g')
+	               .attr('class', 'y-axis')
+	               .call(yAxis);
+
+	          hAxis.selectAll("path")
+			     .style({"fill": "none", "stroke": "none"});
+
+		      hAxis.selectAll("line")
+		         .style("fill", "none")
+		         .style("stroke", "#000")
+		         .style('stroke-opacity', 0.15)
+		         .style("shape-rendering", "crispEdges");
+			       
+		      hAxis.selectAll('text')
+		         .style('font-size', '13px')
+		         .style('fill', '#c2c2c2');
+
+			  vAxis.selectAll("path")
+			     .style("fill", "none")
+			     .style("stroke", "#000")
+			     .style("shape-rendering", "crispEdges")
+		      
+		      vAxis.selectAll("line")
+		         .style("fill", "none")
+		         .style("stroke", "#000")
+		         .style("shape-rendering", "crispEdges")
+			       
+			  vAxis.selectAll('text')
+			      .style('font-size', '12.5px');
+
+			  var startp = svg.append("g")
+			       .attr("class", "legendbox")
+			       .attr('transform', 'translate(200, 0)');
+
+			  var legend = startp.selectAll(".legend")
+			      .data(headers.slice())
+			      .enter().append("g")
+			      .attr("class", "legend")
+			      .attr("transform", function(d, i) { 
+			      	return "translate(" + i * 100 + ", -55)"; 
+			      });
+
+			  legend.append("rect")
+			      .attr("x", 0)
+			      .attr("width", 18)
+			      .attr("height", 15)
+			      .style("fill", colors);
+
+			  legend.append("text")
+			      .attr("x", 22)
+			      .attr("y", 7)
+			      .attr("dy", ".35em")
+			      .style("text-anchor", "begin")
+			      .style("font" ,"10px sans-serif")
+			      .text(function(d) { 
+			      	 return d; 
+			      });
 
 			});
 	    }
