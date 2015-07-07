@@ -47,7 +47,7 @@ app.controller('mainCtrl', ['$scope', function($scope) {
 	 ];
 }]);
 
-app.directive('stackedBar', ['$window', '$timeout', '$log', 'd3Service', function($window, $timeout, $log, d3Service) {
+app.directive('stackedBar', ['d3Service', function(d3Service) {
     
     return {
     	restrict: 'E',
@@ -55,7 +55,6 @@ app.directive('stackedBar', ['$window', '$timeout', '$log', 'd3Service', functio
     		data: '='
     	},
     	link: function(scope, elem, attrs) {
-    		$log.info(scope);
 
     		d3Service.d3().then(function(d3) {
 	          
