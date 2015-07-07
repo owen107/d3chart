@@ -47,15 +47,15 @@ app.controller('mainCtrl', ['$scope', function($scope) {
 	 ];
 }]);
 
-app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($window, $timeout, d3Service) {
+app.directive('stackedBar', ['$window', '$timeout', '$log', 'd3Service', function($window, $timeout, $log, d3Service) {
     
     return {
     	restrict: 'E',
-    	replace: true,
     	scope: {
     		data: '='
     	},
     	link: function(scope, elem, attrs) {
+    		$log.info(scope);
 
     		d3Service.d3().then(function(d3) {
 	          
@@ -130,60 +130,6 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
 			  yScale.domain(layers[0].map(function(d) {
 			  	    return d.x; 
 			  }));
-
-			  // Add a group element for each access group.
-			  var groups = svg.selectAll(".group")
-			      .data(layers)
-			      .enter().append("g")
-			      .attr("class", "group")
-			      .style("fill", function(d, i) { 
-			      	  return colors(i); 
-			      });
-
-			  var rects = groups.selectAll("rect")
-		          .data(function(d) { 
-		          	return d; 
-		          })
-		          .enter().append("rect")
-		          .attr("x", 0)
-		          .attr("width", 0)
-		          .attr("y", function(d) { 
-		          	  return yScale(d.x); 
-		          })
-		          .attr("height", yScale.rangeBand())
-		          .on('mouseover', function(d) {
-                  
-				    toolTip.transition()
-				        .duration(500)
-				        .style('opacity', 1)
-
-				    toolTip.html(d.y)
-				        .style('left', (d3.event.pageX) + 'px')
-				        .style('top', (d3.event.pageY) + 'px')
-
-				    tempColor = this.style.fill;
-				    d3.select(this)
-				        .style('opacity', 0.8)
-				  })
-				  .on('mouseleave', function(d) {
-				  	  toolTip.style('opacity', 0);
-				      d3.select(this)
-				         .style('opacity', 1)
-				         .style('fill', tempColor)
-				  });
-
-		      rects.transition()
-		          .duration(2000)
-		          .ease('elastic')
-			      .delay(function(d, i) { 
-			      	  return i * 30; 
-			      })
-			      .attr("x", function(d) {
-			          return xScale(d.y0); 
-			      })
-			      .attr("width", function(d) { 
-			      	  return xScale(d.y); 
-			      });
 	          
 	          var hAxis = svg.append('g')
 	               .attr('class', 'x-axis')
@@ -241,6 +187,60 @@ app.directive('stackedBar', ['$window', '$timeout', 'd3Service', function($windo
 			       
 			  vAxis.selectAll('text')
 			      .style('font-size', '12.5px');
+
+			  // Add a group element for each access group.
+			  var groups = svg.selectAll(".group")
+			      .data(layers)
+			      .enter().append("g")
+			      .attr("class", "group")
+			      .style("fill", function(d, i) { 
+			      	  return colors(i); 
+			      });
+
+			  var rects = groups.selectAll("rect")
+		          .data(function(d) { 
+		          	return d; 
+		          })
+		          .enter().append("rect")
+		          .attr("x", 0)
+		          .attr("width", 0)
+		          .attr("y", function(d) { 
+		          	  return yScale(d.x); 
+		          })
+		          .attr("height", yScale.rangeBand())
+		          .on('mouseover', function(d) {
+                  
+				    toolTip.transition()
+				        .duration(500)
+				        .style('opacity', 1)
+
+				    toolTip.html(d.y)
+				        .style('left', (d3.event.pageX) + 'px')
+				        .style('top', (d3.event.pageY) + 'px')
+
+				    tempColor = this.style.fill;
+				    d3.select(this)
+				        .style('opacity', 0.8)
+				  })
+				  .on('mouseleave', function(d) {
+				  	  toolTip.style('opacity', 0);
+				      d3.select(this)
+				         .style('opacity', 1)
+				         .style('fill', tempColor)
+				  });
+
+		      rects.transition()
+		          .duration(2000)
+		          .ease('elastic')
+			      .delay(function(d, i) { 
+			      	  return i * 30; 
+			      })
+			      .attr("x", function(d) {
+			          return xScale(d.y0); 
+			      })
+			      .attr("width", function(d) { 
+			      	  return xScale(d.y); 
+			      });
 
 			  var startp = svg.append("g")
 			       .attr("class", "legendbox")
