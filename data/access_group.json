@@ -1,0 +1,43 @@
+[
+    {  
+       "name": "Access Group 1",
+       "low": 290,
+       "med": 415,
+       "high": 295
+    },{
+       "name": "Access Group 2",
+       "low": 250,
+       "med": 350,
+       "high": 260
+    },{
+       "name": "Access Group 3",
+       "low": 220,
+       "med": 330,
+       "high": 230
+    },{
+       "name": "Access Group 4",
+       "low": 240,
+       "med": 330,
+       "high": 220
+    },{
+       "name": "Access Group 5",
+       "low": 250,
+       "med": 355,
+       "high": 305
+    },{
+       "name": "Access Group 6",
+       "low": 235,
+       "med": 400,
+       "high": 205
+    },{
+       "name": "Access Group 7",
+       "low": 260,
+       "med": 310,
+       "high": 285
+    },{
+       "name": "Access Group 8",
+       "low": 280,
+       "med": 400,
+       "high": 295
+    }
+ ]
