@@ -95,8 +95,10 @@ app.directive('stackedBar', ['$window', '$timeout', '$log', 'd3Service', functio
 			      .orient("left");
               
               var svg = d3.select(elem[0]).append('svg')
-                  .attr('width', width + margin.left + margin.right)
-                  .attr('height', height + margin.top + margin.bottom)
+                  // .attr('width', width + margin.left + margin.right)
+                  // .attr('height', height + margin.top + margin.bottom)
+                  .attr("preserveAspectRatio", "xMinYMin meet")
+                  .attr("viewBox", "0 0 800 550")
                   .attr('id', 'stacked-bar')
                   .append('g')
                   .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
@@ -242,11 +244,11 @@ app.directive('stackedBar', ['$window', '$timeout', '$log', 'd3Service', functio
 			      	  return xScale(d.y); 
 			      });
 
-			  var startp = svg.append("g")
+			  var legendbox = svg.append("g")
 			       .attr("class", "legendbox")
-			       .attr('transform', 'translate(200, 0)');
+			       .attr('transform', 'translate(150, 0)');
 
-			  var legend = startp.selectAll(".legend")
+			  var legend = legendbox.selectAll(".legend")
 			      .data(headers.slice())
 			      .enter().append("g")
 			      .attr("class", "legend")
