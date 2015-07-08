@@ -26,7 +26,7 @@ app.directive('stackedBar', [
           xAxis2 = d3.svg.axis().scale(xScale2).orient('top');
           yAxis = d3.svg.axis().scale(yScale).outerTickSize(0).tickPadding(5).orient('left');
           svg = d3.select(elem[0]).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 800 550').attr('id', 'stacked-bar').append('g').attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
-          toolTip = d3.select('body').append('div').style('position', 'absolute').style('padding', '10px 15px').style('border-radius', '5px').style('background', '#ccc').style('fill', '#000').style('opacity', 0);
+          toolTip = d3.select('body').append('div').style('position', 'absolute').style('padding', '10px 15px').style('border-radius', '5px').style('background', '#ccc').style('opacity', 0);
           layers = d3.layout.stack()(['low', 'med', 'high'].map(function(level) {
             return scope.data.map(function(d) {
               return {
@@ -75,12 +75,12 @@ app.directive('stackedBar', [
           }).enter().append('rect').attr('x', 0).attr('width', 0).attr('y', function(d) {
             return yScale(d.x);
           }).attr('height', yScale.rangeBand()).on('mouseover', function(d) {
-            toolTip.transition().duration(500).style('opacity', 1);
+            toolTip.transition().duration(200).style('opacity', 1);
             toolTip.html(d.y).style('left', d3.event.pageX + 'px').style('top', d3.event.pageY + 'px');
             tempColor = this.style.fill;
             d3.select(this).style('opacity', 0.8);
-          }).on('mouseleave', function(d) {
-            toolTip.style('opacity', 0);
+          }).on('mouseout', function(d) {
+            toolTip.transition().duration(200).style('opacity', 0);
             d3.select(this).style('opacity', 1).style('fill', tempColor);
           });
           rects.transition().duration(2000).ease('elastic').delay(function(d, i) {

@@ -81,6 +81,11 @@ p {
     		border: 1px solid #CE6A6D;
     		color: $light;
     		@include background-image(bottom, $red, $darkred);
+    		cursor: pointer;
+
+    		&:hover {
+    			@include background-image(bottom, $darkred, $red);
+    		}
     	}
     }
 
@@ -182,7 +187,7 @@ p {
            	  color: rgba($dark, 0.6);
            	  font-size: 13px;
            	  border: 1px solid rgba($dark, 0.2);
-           	  @include box-shadow(-1px, -1px, 3px, 0.5px, rgba($dark, 0.5));
+           	  @include box-shadow(-1px, -1px, 2px, 0.5px, rgba($dark, 0.5));
 
            	  &:focus {
            	  	 outline: none;
@@ -295,6 +300,5 @@ p {
     	border-color: transparent;
     }
 }
-
 
 

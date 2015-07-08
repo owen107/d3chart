@@ -70,7 +70,6 @@ app.directive 'stackedBar', [
              .style 'padding', '10px 15px'
              .style 'border-radius', '5px'
              .style 'background', '#ccc'
-             .style 'fill', '#000'
              .style 'opacity', 0
 
           # Create a new array for the data of each layer
@@ -183,7 +182,7 @@ app.directive 'stackedBar', [
               # Add tooltip when hovering the retangle element
               .on 'mouseover', (d) ->
                 toolTip.transition()
-                    .duration 500
+                    .duration 200
                     .style 'opacity', 1
 
                 toolTip.html(d.y)
@@ -193,8 +192,11 @@ app.directive 'stackedBar', [
                 tempColor = @style.fill
                 d3.select(this).style 'opacity', 0.8
                 return
-              .on 'mouseleave', (d) ->
-                toolTip.style 'opacity', 0
+              .on 'mouseout', (d) ->
+                toolTip.transition()
+                     .duration 200
+                     .style 'opacity', 0
+
                 d3.select(this)
                     .style 'opacity', 1
                     .style 'fill', tempColor

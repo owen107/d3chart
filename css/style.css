@@ -159,8 +159,17 @@ p {
   background-image: -webkit-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
   background-image: -ms-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
   background-image: linear-gradient(to bottom, #E66072 0%, #B00C23 100%);
+  cursor: pointer;
 }
-/* line 87, components/sass/main.scss */
+/* line 86, components/sass/main.scss */
+#header .auth-section .btn:hover {
+  background-image: -o-linear-gradient(bottom, #B00C23 0%, #E66072 100%);
+  background-image: -moz-linear-gradient(bottom, #B00C23 0%, #E66072 100%);
+  background-image: -webkit-linear-gradient(bottom, #B00C23 0%, #E66072 100%);
+  background-image: -ms-linear-gradient(bottom, #B00C23 0%, #E66072 100%);
+  background-image: linear-gradient(to bottom, #B00C23 0%, #E66072 100%);
+}
+/* line 92, components/sass/main.scss */
 #header .select-group {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -175,14 +184,14 @@ p {
   -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
 }
-/* line 102, components/sass/main.scss */
+/* line 107, components/sass/main.scss */
 #header .select-client {
   margin-top: 5px;
   margin-bottom: 12px;
   padding-left: 12px;
   width: 110px;
 }
-/* line 109, components/sass/main.scss */
+/* line 114, components/sass/main.scss */
 #header .select-report {
   width: 80px;
   padding-left: 12px;
@@ -190,7 +199,7 @@ p {
 }
 
 /* Main Content Styles */
-/* line 118, components/sass/main.scss */
+/* line 123, components/sass/main.scss */
 #main-content {
   margin-top: 2.5px;
   /* Sidebar Styles */
@@ -201,7 +210,7 @@ p {
   display: table;
   clear: both;
 }
-/* line 124, components/sass/main.scss */
+/* line 129, components/sass/main.scss */
 #main-content .sidebar {
   width: 24%;
   float: left;
@@ -212,18 +221,18 @@ p {
   -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 130, components/sass/main.scss */
+/* line 135, components/sass/main.scss */
 #main-content .sidebar .container {
   padding: 28px 12% 0 12%;
 }
-/* line 134, components/sass/main.scss */
+/* line 139, components/sass/main.scss */
 #main-content .sidebar h1 {
   font-size: 28px;
   letter-spacing: 1px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 141, components/sass/main.scss */
+/* line 146, components/sass/main.scss */
 #main-content .sidebar .help-section {
   margin-top: 32px;
   margin-bottom: 28px;
@@ -236,34 +245,34 @@ p {
   display: table;
   clear: both;
 }
-/* line 148, components/sass/main.scss */
+/* line 153, components/sass/main.scss */
 #main-content .sidebar .help-section span:first-child {
   float: left;
 }
-/* line 152, components/sass/main.scss */
+/* line 157, components/sass/main.scss */
 #main-content .sidebar .help-section span:last-child {
   float: right;
 }
-/* line 158, components/sass/main.scss */
+/* line 163, components/sass/main.scss */
 #main-content .sidebar .date-section label, #main-content .sidebar .date-section input[type="text"] {
   display: block;
 }
-/* line 162, components/sass/main.scss */
+/* line 167, components/sass/main.scss */
 #main-content .sidebar .date-section label {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 500;
   margin-bottom: 6px;
 }
-/* line 169, components/sass/main.scss */
+/* line 174, components/sass/main.scss */
 #main-content .sidebar .date-section p:first-child {
   margin-bottom: 15px;
 }
-/* line 173, components/sass/main.scss */
+/* line 178, components/sass/main.scss */
 #main-content .sidebar .date-section p:last-child {
   margin-bottom: 35px;
 }
-/* line 177, components/sass/main.scss */
+/* line 182, components/sass/main.scss */
 #main-content .sidebar .date-section .input-control {
   width: 95%;
   padding: 7px 0 7px 8px;
@@ -272,31 +281,31 @@ p {
   color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
-  box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -1px -1px 2px 0.5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -1px -1px 2px 0.5px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: -1px -1px 2px 0.5px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px -1px 2px 0.5px rgba(0, 0, 0, 0.5);
 }
-/* line 187, components/sass/main.scss */
+/* line 192, components/sass/main.scss */
 #main-content .sidebar .date-section .input-control:focus {
   outline: none;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 196, components/sass/main.scss */
+/* line 201, components/sass/main.scss */
 #main-content .chart-section {
   width: 76%;
   float: left;
 }
-/* line 199, components/sass/main.scss */
+/* line 204, components/sass/main.scss */
 #main-content .chart-section .container {
   padding: 20px 4% 0 3%;
 }
-/* line 203, components/sass/main.scss */
+/* line 208, components/sass/main.scss */
 #main-content .chart-section h1 {
   text-align: center;
   font-size: 20px;
 }
-/* line 208, components/sass/main.scss */
+/* line 213, components/sass/main.scss */
 #main-content .chart-section .controls-section {
   margin-bottom: 15px;
 }
@@ -306,43 +315,43 @@ p {
   display: table;
   clear: both;
 }
-/* line 212, components/sass/main.scss */
+/* line 217, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control {
   width: 40%;
   float: left;
   margin-right: 2%;
 }
-/* line 217, components/sass/main.scss */
+/* line 222, components/sass/main.scss */
 #main-content .chart-section .controls-section .days-control {
   width: 58.0%;
   float: left;
 }
-/* line 220, components/sass/main.scss */
+/* line 225, components/sass/main.scss */
 #main-content .chart-section .controls-section .days-control .btn-group .btn {
   width: 12.5%;
 }
-/* line 225, components/sass/main.scss */
+/* line 230, components/sass/main.scss */
 #main-content .chart-section .controls-section p {
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
   margin-bottom: 5px;
   font-weight: 400;
 }
-/* line 235, components/sass/main.scss */
+/* line 240, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control .btn-group .btn:first-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* line 240, components/sass/main.scss */
+/* line 245, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control .btn-group .btn:last-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:last-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 248, components/sass/main.scss */
+/* line 253, components/sass/main.scss */
 #main-content .chart-section .bar-chart-section {
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
-/* line 251, components/sass/main.scss */
+/* line 256, components/sass/main.scss */
 #main-content .chart-section .bar-chart-section h1 {
   color: rgba(0, 0, 0, 0.6);
   font-weight: 500;
@@ -350,11 +359,11 @@ p {
   margin-bottom: 5px;
 }
 
-/* line 262, components/sass/main.scss */
+/* line 267, components/sass/main.scss */
 .btn-group {
   width: 100%;
 }
-/* line 264, components/sass/main.scss */
+/* line 269, components/sass/main.scss */
 .btn-group .btn {
   width: 25%;
   padding: 8px 0;
@@ -362,26 +371,26 @@ p {
   font-weight: 400;
   border: 2px solid rgba(0, 0, 0, 0.15);
 }
-/* line 271, components/sass/main.scss */
+/* line 276, components/sass/main.scss */
 .btn-group .btn:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-/* line 276, components/sass/main.scss */
+/* line 281, components/sass/main.scss */
 .btn-group .btn:not(:last-child) {
   border-right: none;
 }
-/* line 280, components/sass/main.scss */
+/* line 285, components/sass/main.scss */
 .btn-group .btn:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 287, components/sass/main.scss */
+/* line 292, components/sass/main.scss */
 .btn-group .btn-normal {
   background: #fff;
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 292, components/sass/main.scss */
+/* line 297, components/sass/main.scss */
 .btn-group .btn-active {
   background: #CDCDCD;
   color: #fff;
