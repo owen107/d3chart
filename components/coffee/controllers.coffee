@@ -3,7 +3,5 @@ app.controller 'mainController', [
   'dataService'
   ($scope, dataService) ->
     dataService.getData().then (data) ->
-      $scope.groupData = data.data
-      return
-    return
+      $scope.groupData = data.data 
 ]

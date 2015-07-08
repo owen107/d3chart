@@ -13,8 +13,6 @@ angular.module('d3', []).factory 'd3Service', [
       # Load client in the browser
       $rootScope.$apply ->
         d.resolve $window.d3
-        return
-      return
 
     scriptTag.type = 'text/javascript'
     scriptTag.async = true
@@ -23,10 +21,10 @@ angular.module('d3', []).factory 'd3Service', [
     scriptTag.onreadystatechange = ->
       if @readyState == 'complete'
         onScriptLoad()
-      return
 
     scriptTag.onload = onScriptLoad
     s = $document[0].getElementsByTagName('body')[0]
     s.appendChild scriptTag
     d3service
 ]
+

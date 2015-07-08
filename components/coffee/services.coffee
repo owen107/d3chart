@@ -3,10 +3,8 @@ app.service 'dataService', [
   ($http) ->
 
     @getData = ->
-      groupData = $http.get('data/access_group.json').success((data) ->
+      groupData = $http.get('data/access_group.json').success (data) ->
         data
-      )
       groupData
-
-    return
+    return 
 ]

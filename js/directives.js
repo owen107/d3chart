@@ -6,7 +6,7 @@ app.directive('stackedBar', [
         data: '='
       },
       link: function(scope, elem, attrs) {
-        d3Service.d3().then(function(d3) {
+        return d3Service.d3().then(function(d3) {
           var colors, groups, hAxis, hAxis2, headers, height, layers, legend, legendbox, margin, rects, svg, tempColor, toolTip, vAxis, width, xAxis, xAxis2, xScale, xScale2, yAxis, yScale;
           margin = {
             top: 55,
@@ -21,7 +21,7 @@ app.directive('stackedBar', [
           yScale = d3.scale.ordinal().rangeRoundBands([0, height], .66, 0.2);
           xScale = d3.scale.linear().rangeRound([0, width]);
           xScale2 = d3.scale.linear().rangeRound([0, width]);
-          colors = d3.scale.ordinal().domain(headers).range(['#9ecae1', '#6baed6', '#3182bd']);
+          colors = d3.scale.ordinal().domain(headers).range(['#B0D6E0', '#0FB0DF', '#0E678A']);
           xAxis = d3.svg.axis().scale(xScale).tickSize(-height).tickPadding(8).orient('top');
           xAxis2 = d3.svg.axis().scale(xScale2).orient('top');
           yAxis = d3.svg.axis().scale(yScale).outerTickSize(0).tickPadding(5).orient('left');
@@ -92,10 +92,10 @@ app.directive('stackedBar', [
           });
           legendbox = svg.append('g').attr('class', 'legendbox').attr('transform', 'translate(150, 0)');
           legend = legendbox.selectAll('.legend').data(headers.slice()).enter().append('g').attr('class', 'legend').attr('transform', function(d, i) {
-            return 'translate(' + i * 100 + ', -45)';
+            return 'translate (' + i * 100 + ', -45)';
           });
           legend.append('rect').attr('x', 0).attr('width', 18).attr('height', 15).style('fill', colors);
-          legend.append('text').attr('x', 22).attr('y', 7).attr('dy', '.35em').style('text-anchor', 'begin').style('font', '10px sans-serif').text(function(d) {
+          return legend.append('text').attr('x', 22).attr('y', 7).attr('dy', '.35em').style('text-anchor', 'begin').style('font', '10px sans-serif').text(function(d) {
             return d;
           });
         });

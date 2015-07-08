@@ -9,8 +9,8 @@ angular.module('d3', []).factory('d3Service', [
     };
     scriptTag = $document[0].createElement('script');
     onScriptLoad = function() {
-      $rootScope.$apply(function() {
-        d.resolve($window.d3);
+      return $rootScope.$apply(function() {
+        return d.resolve($window.d3);
       });
     };
     scriptTag.type = 'text/javascript';
@@ -18,7 +18,7 @@ angular.module('d3', []).factory('d3Service', [
     scriptTag.src = 'https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js';
     scriptTag.onreadystatechange = function() {
       if (this.readyState === 'complete') {
-        onScriptLoad();
+        return onScriptLoad();
       }
     };
     scriptTag.onload = onScriptLoad;
