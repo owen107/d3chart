@@ -96,57 +96,59 @@ p {
 #header .auth-section li,
 #header .nav-section li {
   font-size: 12px;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 33, components/sass/main.scss */
+/* line 34, components/sass/main.scss */
 #header .logo-section {
   width: 10%;
   float: left;
   padding: 10px 0 0 25px;
 }
-/* line 37, components/sass/main.scss */
+/* line 38, components/sass/main.scss */
 #header .logo-section img {
   width: 90%;
   margin-top: 3px;
 }
-/* line 43, components/sass/main.scss */
+/* line 44, components/sass/main.scss */
 #header .client-section,
 #header .nav-section, #header .auth-section {
   padding: 10px 0 0 0;
 }
-/* line 47, components/sass/main.scss */
+/* line 48, components/sass/main.scss */
 #header .client-section {
   width: 10%;
   float: left;
   padding-left: 30px;
 }
-/* line 52, components/sass/main.scss */
+/* line 53, components/sass/main.scss */
 #header .nav-section {
   width: 25%;
   float: left;
+  padding-left: 20px;
   text-transform: capitalize;
 }
-/* line 56, components/sass/main.scss */
+/* line 58, components/sass/main.scss */
 #header .nav-section li {
   padding: 5px 5px;
 }
-/* line 59, components/sass/main.scss */
+/* line 61, components/sass/main.scss */
 #header .nav-section li:last-child {
   border-bottom: 5px solid #00D73B;
   padding-left: 18px;
   padding-right: 18px;
   padding-bottom: 7px;
 }
-/* line 68, components/sass/main.scss */
+/* line 70, components/sass/main.scss */
 #header .auth-section {
   float: right;
   padding-right: 10px;
 }
-/* line 72, components/sass/main.scss */
+/* line 74, components/sass/main.scss */
 #header .auth-section li {
   margin-right: 10px;
 }
-/* line 76, components/sass/main.scss */
+/* line 78, components/sass/main.scss */
 #header .auth-section .btn {
   padding: 7px 7px;
   border-radius: 5px;
@@ -158,7 +160,7 @@ p {
   background-image: -ms-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
   background-image: linear-gradient(to bottom, #E66072 0%, #B00C23 100%);
 }
-/* line 85, components/sass/main.scss */
+/* line 87, components/sass/main.scss */
 #header .select-group {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -166,19 +168,21 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 3px 5px;
   color: rgba(0, 0, 0, 0.5);
+  background: url(../img/arrow.png) no-repeat 95% 50%;
+  background-size: 15px 12px;
   border-radius: 0px;
   font-size: 11px;
   -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
 }
-/* line 99, components/sass/main.scss */
+/* line 102, components/sass/main.scss */
 #header .select-client {
   margin-top: 5px;
   margin-bottom: 12px;
   padding-left: 12px;
   width: 110px;
 }
-/* line 106, components/sass/main.scss */
+/* line 109, components/sass/main.scss */
 #header .select-report {
   width: 80px;
   padding-left: 12px;
@@ -186,7 +190,7 @@ p {
 }
 
 /* Main Content Styles */
-/* line 115, components/sass/main.scss */
+/* line 118, components/sass/main.scss */
 #main-content {
   margin-top: 2.5px;
   /* Sidebar Styles */
@@ -197,25 +201,29 @@ p {
   display: table;
   clear: both;
 }
-/* line 121, components/sass/main.scss */
+/* line 124, components/sass/main.scss */
 #main-content .sidebar {
   width: 24%;
   float: left;
   background: #F2F2F2;
   height: 100vh;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 126, components/sass/main.scss */
+/* line 130, components/sass/main.scss */
 #main-content .sidebar .container {
   padding: 28px 12% 0 12%;
 }
-/* line 130, components/sass/main.scss */
+/* line 134, components/sass/main.scss */
 #main-content .sidebar h1 {
   font-size: 28px;
   letter-spacing: 1px;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 137, components/sass/main.scss */
+/* line 141, components/sass/main.scss */
 #main-content .sidebar .help-section {
   margin-top: 32px;
   margin-bottom: 28px;
@@ -228,34 +236,34 @@ p {
   display: table;
   clear: both;
 }
-/* line 144, components/sass/main.scss */
+/* line 148, components/sass/main.scss */
 #main-content .sidebar .help-section span:first-child {
   float: left;
 }
-/* line 148, components/sass/main.scss */
+/* line 152, components/sass/main.scss */
 #main-content .sidebar .help-section span:last-child {
   float: right;
 }
-/* line 154, components/sass/main.scss */
+/* line 158, components/sass/main.scss */
 #main-content .sidebar .date-section label, #main-content .sidebar .date-section input[type="text"] {
   display: block;
 }
-/* line 158, components/sass/main.scss */
+/* line 162, components/sass/main.scss */
 #main-content .sidebar .date-section label {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 500;
   margin-bottom: 6px;
 }
-/* line 165, components/sass/main.scss */
+/* line 169, components/sass/main.scss */
 #main-content .sidebar .date-section p:first-child {
   margin-bottom: 15px;
 }
-/* line 169, components/sass/main.scss */
+/* line 173, components/sass/main.scss */
 #main-content .sidebar .date-section p:last-child {
   margin-bottom: 35px;
 }
-/* line 173, components/sass/main.scss */
+/* line 177, components/sass/main.scss */
 #main-content .sidebar .date-section .input-control {
   width: 95%;
   padding: 7px 0 7px 8px;
@@ -269,26 +277,26 @@ p {
   -ms-box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
   box-shadow: -1px -1px 3px 0.5px rgba(0, 0, 0, 0.5);
 }
-/* line 183, components/sass/main.scss */
+/* line 187, components/sass/main.scss */
 #main-content .sidebar .date-section .input-control:focus {
   outline: none;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 192, components/sass/main.scss */
+/* line 196, components/sass/main.scss */
 #main-content .chart-section {
   width: 76%;
   float: left;
 }
-/* line 195, components/sass/main.scss */
+/* line 199, components/sass/main.scss */
 #main-content .chart-section .container {
   padding: 20px 4% 0 3%;
 }
-/* line 199, components/sass/main.scss */
+/* line 203, components/sass/main.scss */
 #main-content .chart-section h1 {
   text-align: center;
   font-size: 20px;
 }
-/* line 204, components/sass/main.scss */
+/* line 208, components/sass/main.scss */
 #main-content .chart-section .controls-section {
   margin-bottom: 15px;
 }
@@ -298,43 +306,43 @@ p {
   display: table;
   clear: both;
 }
-/* line 208, components/sass/main.scss */
+/* line 212, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control {
   width: 40%;
   float: left;
   margin-right: 2%;
 }
-/* line 213, components/sass/main.scss */
+/* line 217, components/sass/main.scss */
 #main-content .chart-section .controls-section .days-control {
   width: 58.0%;
   float: left;
 }
-/* line 216, components/sass/main.scss */
+/* line 220, components/sass/main.scss */
 #main-content .chart-section .controls-section .days-control .btn-group .btn {
   width: 12.5%;
 }
-/* line 221, components/sass/main.scss */
+/* line 225, components/sass/main.scss */
 #main-content .chart-section .controls-section p {
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
   margin-bottom: 5px;
   font-weight: 400;
 }
-/* line 231, components/sass/main.scss */
+/* line 235, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control .btn-group .btn:first-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* line 236, components/sass/main.scss */
+/* line 240, components/sass/main.scss */
 #main-content .chart-section .controls-section .data-control .btn-group .btn:last-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:last-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 244, components/sass/main.scss */
+/* line 248, components/sass/main.scss */
 #main-content .chart-section .bar-chart-section {
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
-/* line 247, components/sass/main.scss */
+/* line 251, components/sass/main.scss */
 #main-content .chart-section .bar-chart-section h1 {
   color: rgba(0, 0, 0, 0.6);
   font-weight: 500;
@@ -342,11 +350,11 @@ p {
   margin-bottom: 5px;
 }
 
-/* line 258, components/sass/main.scss */
+/* line 262, components/sass/main.scss */
 .btn-group {
   width: 100%;
 }
-/* line 260, components/sass/main.scss */
+/* line 264, components/sass/main.scss */
 .btn-group .btn {
   width: 25%;
   padding: 8px 0;
@@ -354,26 +362,26 @@ p {
   font-weight: 400;
   border: 2px solid rgba(0, 0, 0, 0.15);
 }
-/* line 267, components/sass/main.scss */
+/* line 271, components/sass/main.scss */
 .btn-group .btn:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-/* line 272, components/sass/main.scss */
+/* line 276, components/sass/main.scss */
 .btn-group .btn:not(:last-child) {
   border-right: none;
 }
-/* line 276, components/sass/main.scss */
+/* line 280, components/sass/main.scss */
 .btn-group .btn:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 283, components/sass/main.scss */
+/* line 287, components/sass/main.scss */
 .btn-group .btn-normal {
   background: #fff;
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 288, components/sass/main.scss */
+/* line 292, components/sass/main.scss */
 .btn-group .btn-active {
   background: #CDCDCD;
   color: #fff;
