@@ -1,3 +1,5 @@
+@import "variables";
+@import "mixins";
 @import "reset";
 
 .container {
@@ -10,4 +12,109 @@
 	font-size: 20px;
 	margin-top: 20px;
 }
+
+body {
+    font-family: $fontfamily;
+}
+
+p {
+	font-weight: $thin;
+}
+
+/* Header Style */
+#header {
+	@include clearfix;
+	background: $lightgrey;
+	@include box-shadow(1px, 0, 1px, 2.5px, rgba($darkgrey, 0.6));
+
+	.client-section, 
+    .nav-section,
+    .auth-section li,
+    .nav-section li {
+	   display: inline-block;
+    }
+
+    .auth-section li,
+    .nav-section li {
+    	font-size: 12px;
+    	color: rgba($dark, 0.5);
+    }
+
+    .logo-section {
+    	@include column(0.1);
+    	padding: 10px 0 0 25px;
+
+    	img {
+    		width: 90%;
+    		margin-top: 3px;
+    	}
+    }
+
+    .client-section,
+    .nav-section, .auth-section {
+    	padding: 10px 0 0 0;
+    }
+    .client-section {
+    	@include column(0.1);
+    	padding-left: 30px;
+    }
+
+    .nav-section {
+    	@include column(0.25);
+    	text-transform: capitalize;
+
+    	li {
+    		padding: 5px 5px;
+
+    		&:last-child {
+    			border-bottom: 5px solid $green;
+    			padding-left: 18px;
+    			padding-right: 18px;
+    			padding-bottom: 7px;
+    		}
+    	}
+    }
+
+    .auth-section {
+    	float: right;
+    	padding-right: 10px;
+
+    	li {
+    		margin-right: 10px;
+    	}
+
+    	.btn {
+    		padding: 7px 7px;
+    		border-radius: 5px;
+    		border: 1px solid #CE6A6D;
+    		color: $light;
+    		@include background-image(bottom, $red, $darkred);
+    	}
+    }
+
+    .select-group {
+	  -webkit-appearance: none;
+	     -moz-appearance: none;
+	          appearance: none;
+      border: 1px solid rgba($dark, 0.1);
+      padding: 3px 5px;
+      color: rgba($dark, 0.5);
+      // background: url(..select.png) no-repeat 95% 50%;
+      border-radius: 0px;
+      font-size: 11px;
+      -webkit-box-shadow: -1px 1px 1px rgba($dark, 0.6);
+      box-shadow: -1px 1px 1px rgba($dark, 0.6);
+    }
+    
+    .select-client {
+    	margin-top: 5px;
+    	margin-bottom: 12px;
+    }
+
+    .select-report {
+    	width: 80px;
+    	border-radius: 5px;
+    }
+}
+
 

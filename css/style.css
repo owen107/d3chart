@@ -59,15 +59,137 @@ table {
   border-spacing: 0;
 }
 
-/* line 3, components/sass/main.scss */
+/* line 5, components/sass/main.scss */
 .container {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 8, components/sass/main.scss */
+/* line 10, components/sass/main.scss */
 .container h1 {
   text-align: center;
   font-size: 20px;
   margin-top: 20px;
+}
+
+/* line 16, components/sass/main.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 20, components/sass/main.scss */
+p {
+  font-weight: 200;
+}
+
+/* Header Style */
+/* line 25, components/sass/main.scss */
+#header {
+  background: #FAFAFA;
+  -webkit-box-shadow: 1px 0 1px 2.5px rgba(205, 205, 205, 0.6);
+  -moz-box-shadow: 1px 0 1px 2.5px rgba(205, 205, 205, 0.6);
+  -ms-box-shadow: 1px 0 1px 2.5px rgba(205, 205, 205, 0.6);
+  box-shadow: 1px 0 1px 2.5px rgba(205, 205, 205, 0.6);
+}
+/* line 2, components/sass/_mixins.scss */
+#header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 30, components/sass/main.scss */
+#header .client-section,
+#header .nav-section,
+#header .auth-section li,
+#header .nav-section li {
+  display: inline-block;
+}
+/* line 37, components/sass/main.scss */
+#header .auth-section li,
+#header .nav-section li {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+/* line 43, components/sass/main.scss */
+#header .logo-section {
+  width: 10%;
+  float: left;
+  padding: 10px 0 0 25px;
+}
+/* line 47, components/sass/main.scss */
+#header .logo-section img {
+  width: 90%;
+  margin-top: 3px;
+}
+/* line 53, components/sass/main.scss */
+#header .client-section,
+#header .nav-section, #header .auth-section {
+  padding: 10px 0 0 0;
+}
+/* line 57, components/sass/main.scss */
+#header .client-section {
+  width: 10%;
+  float: left;
+  padding-left: 30px;
+}
+/* line 62, components/sass/main.scss */
+#header .nav-section {
+  width: 25%;
+  float: left;
+  text-transform: capitalize;
+}
+/* line 66, components/sass/main.scss */
+#header .nav-section li {
+  padding: 5px 5px;
+}
+/* line 69, components/sass/main.scss */
+#header .nav-section li:last-child {
+  border-bottom: 5px solid #00D73B;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 7px;
+}
+/* line 78, components/sass/main.scss */
+#header .auth-section {
+  float: right;
+  padding-right: 10px;
+}
+/* line 82, components/sass/main.scss */
+#header .auth-section li {
+  margin-right: 10px;
+}
+/* line 86, components/sass/main.scss */
+#header .auth-section .btn {
+  padding: 7px 7px;
+  border-radius: 5px;
+  border: 1px solid #CE6A6D;
+  color: #fff;
+  background-image: -o-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
+  background-image: -moz-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
+  background-image: -webkit-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
+  background-image: -ms-linear-gradient(bottom, #E66072 0%, #B00C23 100%);
+  background-image: linear-gradient(to bottom, #E66072 0%, #B00C23 100%);
+}
+/* line 95, components/sass/main.scss */
+#header .select-group {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3px 5px;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+  font-size: 11px;
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+/* line 109, components/sass/main.scss */
+#header .select-client {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+/* line 114, components/sass/main.scss */
+#header .select-report {
+  width: 80px;
+  border-radius: 5px;
 }

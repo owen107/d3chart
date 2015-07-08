@@ -8,4 +8,4 @@ This is a project for creating a D3 chart using Angular JS directive.
 4. Run `> npm-install` to install the project dependencies
 5. Install gulp.js via the Mac terminal or Gitbash on a PC `> npm install -g gulp`
 5. Run the Gulp command `> gulp`
-6. Fire up your browser at `http://localhost:8080`
+6. Fire up your browser at `http://localhost:8000`
