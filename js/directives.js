@@ -10,9 +10,9 @@ app.directive('stackedBar', [
           var colors, groups, hAxis, hAxis2, headers, height, layers, legend, legendbox, margin, rects, svg, tempColor, toolTip, vAxis, width, xAxis, xAxis2, xScale, xScale2, yAxis, yScale;
           margin = {
             top: 55,
-            right: 25,
+            right: 45,
             bottom: 15,
-            left: 125
+            left: 100
           };
           width = 800 - margin.left - margin.right;
           height = 550 - margin.top - margin.bottom;
@@ -49,9 +49,9 @@ app.directive('stackedBar', [
             return d.x;
           }));
           hAxis = svg.append('g').attr('class', 'x-axis').attr('transform', 'translate(0, 0)').call(xAxis);
-          hAxis.append('text').style('font-size', '12px').attr('transform', 'translate(' + (width - 43) + ', -28)').text('# of Members');
+          hAxis.append('text').style('font-size', '10px').attr('transform', 'translate(' + (width - 43) + ', -28)').text('# of Members');
           hAxis2 = svg.append('g').attr('class', 'x-axis2').attr('transform', 'translate(0, ' + (height - 40) + ')').call(xAxis2);
-          hAxis.append('text').style('font-size', '12px').attr('transform', 'translate(' + (width + 15) + ', ' + (height - 50) + ')').text('%');
+          hAxis.append('text').style('font-size', '10px').attr('transform', 'translate(' + (width + 15) + ', ' + (height - 50) + ')').text('%');
           vAxis = svg.append('g').attr('class', 'y-axis').call(yAxis);
           hAxis.selectAll('path').style({
             'fill': 'none',
@@ -62,11 +62,11 @@ app.directive('stackedBar', [
             'stroke': 'none'
           });
           hAxis.selectAll('line').style('fill', 'none').style('stroke', '#000').style('stroke-opacity', 0.15).style('shape-rendering', 'crispEdges');
-          hAxis.selectAll('.tick text').style('font-size', '13px').style('fill', '#c2c2c2');
-          hAxis2.selectAll('.tick text').style('font-size', '13px').style('fill', '#c2c2c2');
+          hAxis.selectAll('.tick text').style('font-size', '10px').style('fill', '#c2c2c2');
+          hAxis2.selectAll('.tick text').style('font-size', '10px').style('fill', '#c2c2c2');
           vAxis.selectAll('path').style('fill', 'none').style('stroke', '#000').style('shape-rendering', 'crispEdges');
           vAxis.selectAll('line').style('fill', 'none').style('stroke', '#000').style('shape-rendering', 'crispEdges');
-          vAxis.selectAll('text').style('font-size', '12.5px');
+          vAxis.selectAll('text').style('font-size', '10px');
           groups = svg.selectAll('.group').data(layers).enter().append('g').attr('class', 'group').style('fill', function(d, i) {
             return colors(i);
           });
@@ -95,7 +95,7 @@ app.directive('stackedBar', [
             return 'translate (' + i * 100 + ', -45)';
           });
           legend.append('rect').attr('x', 0).attr('width', 18).attr('height', 15).style('fill', colors);
-          return legend.append('text').attr('x', 22).attr('y', 7).attr('dy', '.35em').style('text-anchor', 'begin').style('font', '10px sans-serif').text(function(d) {
+          return legend.append('text').attr('x', 22).attr('y', 7).attr('dy', '.35em').style('fill', '#9E9D9D').style('text-anchor', 'begin').style('font', '10px sans-serif').text(function(d) {
             return d;
           });
         });

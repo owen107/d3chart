@@ -124,7 +124,7 @@ p {
 		height: 100vh;
 
 		.container {
-			padding: 30px 12% 0 12%;
+			padding: 28px 12% 0 12%;
 		}
 
 		h1 {
@@ -192,10 +192,65 @@ p {
 	.chart-section {
 		@include column(0.76);
 
+		.container {
+			padding: 20px 4% 0 3%;
+		}
+
 		h1 {
 			text-align: center;
 			font-size: 20px;
 		}
+        
+        .controls-section {
+        	@include clearfix;
+        	margin-bottom: 15px;
+
+        	.data-control {
+				@include column(0.4);
+				margin-right: 2%;
+			}
+
+			.days-control {
+				@include column(0.58);
+
+				.btn-group .btn {
+					width: 12.5%;
+				}
+			}
+
+			p {
+				color: rgba($dark, 0.6);
+				font-size: 12px;
+				margin-bottom: 5px;
+				font-weight: $normal;
+			}
+
+			.data-control, .days-control {
+				.btn-group .btn {
+                    
+				   &:first-child {
+			       	   border-top-left-radius: 0;
+			       	   border-bottom-left-radius: 0;
+			       }
+
+			       &:last-child {
+			       	   border-top-right-radius: 0;
+			       	   border-bottom-right-radius: 0;
+			       }
+				}
+			}
+        }
+
+        .bar-chart-section {
+        	border: 2px solid rgba($dark, 0.2);
+
+        	h1 {
+        		color: rgba($dark, 0.6);
+        		font-weight: 500;
+        		margin-top: 10px;
+        		margin-bottom: 5px;
+        	}
+        }
 	}
 
 }
@@ -212,15 +267,10 @@ p {
        &:first-child {
        	   border-top-left-radius: 5px;
        	   border-bottom-left-radius: 5px;
-       	   border-right: none;
        }
 
-       &:nth-child(2) {
+       &:not(:last-child) {
        	   border-right: none;
-       }
-
-       &:nth-child(3) {
-       	   border-color: transparent;
        }
 
        &:last-child {
@@ -238,6 +288,7 @@ p {
     .btn-active {
     	background: $darkgrey;
     	color: $light;
+    	border-color: transparent;
     }
 }
 

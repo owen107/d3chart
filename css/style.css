@@ -206,7 +206,7 @@ p {
 }
 /* line 126, components/sass/main.scss */
 #main-content .sidebar .container {
-  padding: 30px 12% 0 12%;
+  padding: 28px 12% 0 12%;
 }
 /* line 130, components/sass/main.scss */
 #main-content .sidebar h1 {
@@ -280,16 +280,73 @@ p {
   float: left;
 }
 /* line 195, components/sass/main.scss */
+#main-content .chart-section .container {
+  padding: 20px 4% 0 3%;
+}
+/* line 199, components/sass/main.scss */
 #main-content .chart-section h1 {
   text-align: center;
   font-size: 20px;
 }
+/* line 204, components/sass/main.scss */
+#main-content .chart-section .controls-section {
+  margin-bottom: 15px;
+}
+/* line 3, components/sass/_mixins.scss */
+#main-content .chart-section .controls-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 208, components/sass/main.scss */
+#main-content .chart-section .controls-section .data-control {
+  width: 40%;
+  float: left;
+  margin-right: 2%;
+}
+/* line 213, components/sass/main.scss */
+#main-content .chart-section .controls-section .days-control {
+  width: 58.0%;
+  float: left;
+}
+/* line 216, components/sass/main.scss */
+#main-content .chart-section .controls-section .days-control .btn-group .btn {
+  width: 12.5%;
+}
+/* line 221, components/sass/main.scss */
+#main-content .chart-section .controls-section p {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+/* line 231, components/sass/main.scss */
+#main-content .chart-section .controls-section .data-control .btn-group .btn:first-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* line 236, components/sass/main.scss */
+#main-content .chart-section .controls-section .data-control .btn-group .btn:last-child, #main-content .chart-section .controls-section .days-control .btn-group .btn:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 244, components/sass/main.scss */
+#main-content .chart-section .bar-chart-section {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+/* line 247, components/sass/main.scss */
+#main-content .chart-section .bar-chart-section h1 {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
-/* line 203, components/sass/main.scss */
+/* line 258, components/sass/main.scss */
 .btn-group {
   width: 100%;
 }
-/* line 205, components/sass/main.scss */
+/* line 260, components/sass/main.scss */
 .btn-group .btn {
   width: 25%;
   padding: 8px 0;
@@ -297,32 +354,28 @@ p {
   font-weight: 400;
   border: 2px solid rgba(0, 0, 0, 0.15);
 }
-/* line 212, components/sass/main.scss */
+/* line 267, components/sass/main.scss */
 .btn-group .btn:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+/* line 272, components/sass/main.scss */
+.btn-group .btn:not(:last-child) {
   border-right: none;
 }
-/* line 218, components/sass/main.scss */
-.btn-group .btn:nth-child(2) {
-  border-right: none;
-}
-/* line 222, components/sass/main.scss */
-.btn-group .btn:nth-child(3) {
-  border-color: transparent;
-}
-/* line 226, components/sass/main.scss */
+/* line 276, components/sass/main.scss */
 .btn-group .btn:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 233, components/sass/main.scss */
+/* line 283, components/sass/main.scss */
 .btn-group .btn-normal {
   background: #fff;
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 238, components/sass/main.scss */
+/* line 288, components/sass/main.scss */
 .btn-group .btn-active {
   background: #CDCDCD;
   color: #fff;
+  border-color: transparent;
 }

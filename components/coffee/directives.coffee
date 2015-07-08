@@ -12,9 +12,9 @@ app.directive 'stackedBar', [
           # Initiate the variables for the charts
           margin = 
             top: 55
-            right: 25
+            right: 45
             bottom: 15
-            left: 125
+            left: 100
           width = 800 - (margin.left) - (margin.right)
           height = 550 - (margin.top) - (margin.bottom)
           headers = [
@@ -101,7 +101,7 @@ app.directive 'stackedBar', [
 
           # Append the text label for the first x axis 
           hAxis.append 'text'
-              .style 'font-size', '12px'
+              .style 'font-size', '10px'
               .attr 'transform', 'translate(' + (width-43) + ', -28)'
               .text '# of Members'
 
@@ -113,7 +113,7 @@ app.directive 'stackedBar', [
 
           # Append the text label for the second x axis
           hAxis.append 'text'
-              .style 'font-size', '12px'
+              .style 'font-size', '10px'
               .attr 'transform', 'translate(' + (width+15) + ', ' + (height-50) + ')'
               .text '%'
           
@@ -140,11 +140,11 @@ app.directive 'stackedBar', [
           
           # Settings for the text of two x axises
           hAxis.selectAll('.tick text')
-              .style 'font-size', '13px'
+              .style 'font-size', '10px'
               .style 'fill', '#c2c2c2'
 
           hAxis2.selectAll('.tick text')
-              .style 'font-size', '13px'
+              .style 'font-size', '10px'
               .style 'fill', '#c2c2c2'
           
           # Settings for the path, line and text of y axis
@@ -159,7 +159,7 @@ app.directive 'stackedBar', [
               .style 'shape-rendering', 'crispEdges'
 
           vAxis.selectAll('text')
-              .style 'font-size', '12.5px'
+              .style 'font-size', '10px'
 
           # Add a group element for each access group layer
           groups = svg.selectAll('.group')
@@ -233,6 +233,7 @@ app.directive 'stackedBar', [
               .attr 'x', 22
               .attr 'y', 7
               .attr 'dy', '.35em'
+              .style 'fill', '#9E9D9D'
               .style 'text-anchor', 'begin'
               .style 'font', '10px sans-serif'
               .text (d) ->

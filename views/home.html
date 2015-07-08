@@ -2,11 +2,15 @@
 	<div ng-include="'views/sidebar.html'"></div>
 
 	<div class="chart-section">
-		 <div ng-include="'views/controls.html'"></div>
+		<div class="container">
 
-		 <div class="bar-chart-section">
-		 	<h1>Access Group: By Size</h1>
-		    <stacked-bar data="groupData"></stacked-bar>
-		 </div> 
+			<div ng-include="'views/controls.html'"></div>
+
+			<div class="bar-chart-section">
+			 	<h1>Access Group: By Size</h1>
+			    <stacked-bar data="groupData"></stacked-bar>
+			</div> 
+			
+		</div>
 	</div>
 </div>
